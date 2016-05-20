@@ -2,7 +2,7 @@
 var Cluster = require('cluster2'),
     app = require('./app'),
     port = ( process.env.PORT || 3100 ),
-    multicore = true;
+    multicore = false;
 
 /** cluster webserver across all cores **/
 if( multicore ){
