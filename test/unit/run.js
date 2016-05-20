@@ -31,6 +31,7 @@ var tests = [
   require('./middleware/parseBBox'),
   require('./middleware/sendJSON'),
   require('./middleware/normalizeParentIds'),
+  require('./middleware/trimByGranularity'),
   require('./query/autocomplete'),
   require('./query/autocomplete_defaults'),
   require('./query/search_defaults'),
@@ -58,7 +59,7 @@ var tests = [
   require('./sanitiser/search'),
   require('./sanitiser/wrap'),
   require('./service/mget'),
-  require('./service/search'),
+  require('./service/search')
 ];
 
 tests.map(function(t) {
