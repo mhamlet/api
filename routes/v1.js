@@ -12,8 +12,7 @@ var sanitisers = {
 
 /** ----------------------- middleware ------------------------ **/
 var middleware = {
-  calcSize: require('../middleware/sizeCalculator'),
-  generatePermutations: require('../middleware/generatePermutations')
+  calcSize: require('../middleware/sizeCalculator')
 };
 
 /** ----------------------- controllers ----------------------- **/
@@ -28,6 +27,7 @@ var controllers = {
 /** ----------------------- controllers ----------------------- **/
 
 var postProc = {
+  trimByGranularity: require('../middleware/trimByGranularity'),
   distances: require('../middleware/distance'),
   confidenceScores: require('../middleware/confidenceScore'),
   confidenceScoresReverse: require('../middleware/confidenceScoreReverse'),
@@ -62,8 +62,8 @@ function addRoutes(app, peliasConfig) {
     search: createRouter([
       sanitisers.search.middleware,
       middleware.calcSize(),
-      middleware.generatePermutations(),
       controllers.search(),
+      postProc.trimByGranularity(),
       postProc.distances('focus.point.'),
       postProc.confidenceScores(peliasConfig),
       postProc.dedupe(),
