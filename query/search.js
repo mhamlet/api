@@ -3,13 +3,6 @@ var peliasQuery = require('pelias-query'),
     textParser = require('./text_parser'),
     check = require('check-types'),
     geolib = require('geolib');
-// var placeTypes = require('../helper/placeTypes');
-
-// region_a is also an admin field. addressit tries to detect
-// region_a, in which case we use a match query specifically for it.
-// but address it doesn't know about all of them so it helps to search
-// against this with the other admin parts as a fallback
-// var adminFields = placeTypes.concat(['region_a']);
 
 //------------------------------
 // general-purpose search query
