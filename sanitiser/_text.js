@@ -20,7 +20,7 @@ function translit(inString) {
     var inStringLength = inString.length;
     var outString = '';
 
-    var i, j, is2char, pos;
+    var i, j, is2char, pos, prevCharacter;
 
     for (i = 0; i < inStringLength; i++) {
         is2char = false;
@@ -36,6 +36,7 @@ function translit(inString) {
         }
 
         if (!is2char) {
+            prevCharacter = currentCharacter;
             var currentCharacter = inString.substr(i, 1);
 
             pos = inThreeCharLetters.indexOf(currentCharacter);
@@ -44,6 +45,9 @@ function translit(inString) {
 
                 if (pos < 0) {
                     outString += currentCharacter;
+                }
+                else if ((!prevCharacter || prevCharacter === ' ') && currentCharacter === 'o') {
+                    outString += 'օ';
                 }
                 else {
                     outString += outOneCharLetters.substr(pos, 1);
