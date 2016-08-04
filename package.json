@@ -53,7 +53,7 @@
     "pelias-config": "2.1.0",
     "pelias-logger": "0.0.8",
     "pelias-model": "4.1.0",
-    "pelias-query": "git://github.com/pelias/query.git#category-filter",
+    "pelias-query": "8.3.0",
     "pelias-categories": "git://github.com/pelias/categories.git",
     "pelias-suggester-pipeline": "2.0.4",
     "pelias-text-analyzer": "1.2.0",
